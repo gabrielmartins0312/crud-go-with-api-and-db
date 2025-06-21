@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Register the user</title>
+  <meta charset="UTF-8" />
+  <title>User Management</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h2>Register the user</h2>
-  <form id="userForm">
-    <label for="id">ID (for update only):</label><br/>
-    <input type="number" id="id"/><br /><br />
+  <h2>User Management</h2>
+  <div class="container">
+    <div class="form-section">
+      <h2>User create/update</h2>
+      <form id="userForm">
+        <label for="id">ID (for update only):</label>
+        <input type="number" id="id" />
 
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" required><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required/>
 
-    <label for="email">E-mail:</label><br>
-    <input type="email" id="email" required><br><br>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" required/>
 
-    <button type="submit">Register</button>
-  </form>
+        <button type="submit">Register</button>
+      </form>
+      <div id="result"></div>
+    </div>
 
-  <div id="result"></div>
+    <div class="list-section">
+      <button onclick="listUsers()">List Users</button>
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>Email</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
 
   <script>
     document.getElementById('userForm').addEventListener('submit', async function(e) {
@@ -43,11 +60,34 @@
         resultDiv.innerText = id
           ? 'User updated successfully!'
           : 'User created successfully!';
+
+        document.getElementById('id').value = "";
+        document.getElementById('name').value = "";
+        document.getElementById('email').value = "";
+        
+        listUsers();
       } else {
         const errorText = await res.text();
         resultDiv.innerText = 'Error: ' + errorText;
       }
     });
+
+    async function listUsers() {
+      const res = await fetch('http://localhost:8080/users');
+      const data = await res.json();
+
+      const tbody = document.querySelector("#userTable tbody");
+      tbody.innerHTML = "";
+
+      data.forEach((user) => {
+        const row = `<tr>
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+          </tr>`;
+        tbody.innerHTML += row;
+      });
+    }
   </script>
 </body>
 </html>
