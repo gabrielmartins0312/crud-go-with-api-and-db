@@ -18,7 +18,7 @@ A clean and simple REST API using Go (Golang), MySQL, and an HTML frontend for u
 - Python 3 (optional, for running the HTML locally)
 
 ## 📁 Project Structure
-
+```
 crud-go-with-api-and-db/
 ├── config/ # Database connection
 ├── handler/ # HTTP handlers
@@ -31,7 +31,7 @@ crud-go-with-api-and-db/
 ├── main.go # Application entrypoint
 ├── go.mod # Go module definition
 ├── .env # Environment variables (not committed)
-
+```
 ## 🧪 MySQL Setup
 
 Create the database and table:
