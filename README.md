@@ -47,7 +47,7 @@ CREATE TABLE users (
     email VARCHAR(100)
 );
 ```
-🚀 How to Run the Project
+## 🚀 How to Run the Project
 1. Clone the repository
 
 git clone https://github.com/gabrielmartins0312/crud-go-with-api-and-db.git
@@ -75,7 +75,7 @@ The API will be available at:
 
 http://localhost:8080
 
-🌐 Frontend (HTML Form)
+## 🌐 Frontend (HTML Form)
 1. Open the frontend
 
 Navigate into the view/ folder and run a simple server:
@@ -95,6 +95,6 @@ http://localhost:5500/form.html
 
     Uses POST if ID is empty and PUT if ID is filled
 
-📫 Author
+## 📫 Author
 
 Gabriel Martins – github.com/gabrielmartins0312
