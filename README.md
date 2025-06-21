@@ -46,7 +46,7 @@ CREATE TABLE users (
     name VARCHAR(100),
     email VARCHAR(100)
 );
-
+```
 🚀 How to Run the Project
 1. Clone the repository
 
