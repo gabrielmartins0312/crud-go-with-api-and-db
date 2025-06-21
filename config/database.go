@@ -25,12 +25,12 @@ func Connect() {
 	var err error
 	DB, err = sql.Open("mysql", dsn)
 	if err != nil {
-		log.Fatal("Erro ao conectar no banco de dados: ", err)
+		log.Fatal("Error connecting to database: ", err)
 	}
 
 	if err = DB.Ping(); err != nil {
-		log.Fatal("Erro ao testar conexão com o banco: ", err)
+		log.Fatal("Error testing connection to the bank: ", err)
 	}
 
-	log.Println("Conexão com banco de dados bem-sucedida!")
+	log.Println("Database connection successful!")
 }

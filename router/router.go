@@ -16,7 +16,7 @@ func LoadRoutes(mux *http.ServeMux) {
 		case http.MethodPut:
 			handler.UpdateUser(w, r)
 		default:
-			http.Error(w, "Método não permitido", http.StatusMethodNotAllowed)
+			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		}
 	})
 }
