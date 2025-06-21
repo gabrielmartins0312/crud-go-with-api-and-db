@@ -48,45 +48,45 @@ CREATE TABLE users (
 );
 ```
 ## 🚀 How to Run the Project
-# 1. Clone the repository
-
+1. Clone the repository
+```
 git clone https://github.com/gabrielmartins0312/crud-go-with-api-and-db.git
 cd crud-go-with-api-and-db
-
-# 2. Install Go dependencies
-
+```
+2. Install Go dependencies
+```
 go mod tidy
-
+```
 # 3. Create a .env file
-
+```
 DB_USER=root
 DB_PASS=your_password
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_NAME=crud_go
-
+```
 ⚠️ Make sure to not commit the .env file. It is listed in .gitignore.
 
 # 4. Run the API
-
+```
 go run main.go
-
+```
 The API will be available at:
-
+```
 http://localhost:8080
-
+```
 ## 🌐 Frontend (HTML Form)
 # 1. Open the frontend
 
 Navigate into the view/ folder and run a simple server:
-
+```
 cd view
 python3 -m http.server 5500
-
+```
 # 2. Open in browser
-
+```
 http://localhost:5500/form.html
-
+```
 ✅ How the Form Works
 
     Fill name and email, then click Submit to create a user
